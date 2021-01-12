@@ -74,12 +74,18 @@
     <div class="content-block">
       <app-shop-card
        [product]="product"
-       (increment)="increment()"
+       (increment)="increment($event)"
        (decrement)="decrement()"
       ></app-shop-card>
     </div>
     <div class="terminal">
       <pre>{{ terminalMessage }}</pre>
     </div>
+
+    <input #phone placeholder="phone number" />
+
+    <span>{{phone.value}}</span>
+    <button (click)="callPhone(phone.value)">Call</button>
+
   </div>
 </div>
