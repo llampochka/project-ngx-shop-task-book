@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ngx-shop-star-rating',
@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
 })
 export class StarRatingComponent {
 
+  @Input()
+  public feedbackRate = 0;
+
+  public stars = [0, 1, 2, 3, 4];
+
+  highlight(starIndex): boolean {
+    return starIndex + 1 <= Math.round(this.feedbackRate);
+  }
 }
