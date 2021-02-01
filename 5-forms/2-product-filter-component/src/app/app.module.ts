@@ -15,6 +15,7 @@ import { Ng5SliderModule } from 'ng5-slider';
     PriceSliderComponent,
     PriceInputsComponent,
     BrandsComponent,
+    BrandsComponent,
   ],
   imports: [
     BrowserModule,

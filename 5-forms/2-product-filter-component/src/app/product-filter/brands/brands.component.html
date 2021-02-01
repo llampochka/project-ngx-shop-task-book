@@ -3,17 +3,20 @@
     <h6 class="mb-2 pb-1 pointer">
       <label class="text-dark mb-0">Бренд</label>
     </h6>
-    <div>
-      <div class="custom-control custom-checkbox mb-2 pointer">
-        <input type="checkbox" class="custom-control-input" />
-        <label
+    <div *ngFor="let brandName of brands; let i = index">
+      <div class="custom-control custom-checkbox mb-2 pointer"
+      *ngIf="showBrand(i)">
+        <input type="checkbox" class="custom-control-input"
+          [id]="brandName"
+               (change)="check($event, brandName)"/>
+        <label [for]="brandName"
           class="custom-control-label text-dark pointer brand-name"
-        ></label>
+        >{{brandName}}</label>
       </div>
     </div>
 
     <div class="all-characters pointer">
-      <a class="more">еще</a>
+      <a class="more" (click)="show()">еще</a>
     </div>
   </ng-container>
 </div>
